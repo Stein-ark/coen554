@@ -1,112 +1,5 @@
-/* C2P Hub - main.css. Hand-written CSS3, mobile-first; enhancements in responsive.css. */
+/* C2P Hub - base, layout and components. Tokens live in tokens.css. */
 
-/* 01. DESIGN TOKENS - monochrome; read --color-blue-* as the accent role, not a hue. */
-
-:root {
-  /* --- Accent (the single filled colour) -------------------------------- */
-  --color-white: #ffffff;
-  --color-blue: #111111;          /* near-black — 18.88:1 on white (AAA)       */
-  --color-blue-hover: #2f2f2f;    /* charcoal step for hover on solid fills   */
-  --color-blue-active: #000000;   /* true black for active / pressed          */
-  --color-blue-tint: #f2f2f2;     /* light wash — section & hover backgrounds */
-  --color-blue-tint-strong: #e0e0e0; /* borders and dividers inside washes    */
-
-  /* --- Neutrals --------------------------------------------------------- */
-  --color-ink: #0f0f0f;           /* headings — 19.17:1 on white              */
-  --color-body: #474747;          /* body copy — 9.29:1 on white (AAA)        */
-  /* Must clear 4.5:1 on white, surface wash and tint: 5.74 / 5.36 / 5.13 respectively. */
-  --color-muted: #666666;         /* muted labels — AA on every ground it uses */
-  --color-border: #e4e4e4;        /* hairline borders                          */
-  --color-surface: #f7f7f7;       /* off-white page washes                     */
-
-  /* Validation colour: the one exception to monochrome, because it signals state. */
-  --color-danger: #a3231c;        /* invalid — 7.46:1 on white (AAA) */
-  --color-danger-ring: rgba(163, 35, 28, 0.14);
-  --color-success: #176b40;       /* valid — 6.53:1 on white (AA)    */
-
-  /* --- Semantic surfaces ------------------------------------------------ */
-  --surface-page: var(--color-white);
-  --surface-raised: var(--color-white);
-  --surface-sunken: var(--color-surface);
-  --surface-brand: var(--color-blue);
-
-  /* --- Typography ------------------------------------------------------- */
-  --font-sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono:
-    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
-    Menlo, monospace;
-
-  /* Mobile-first type scale, ~1.22 ratio. Scaled up in responsive.css. */
-  --fs-eyebrow: 0.75rem;   /* 12px */
-  --fs-xs: 0.8125rem;      /* 13px */
-  --fs-sm: 0.9375rem;      /* 15px */
-  --fs-base: 1rem;         /* 16px */
-  --fs-md: 1.0625rem;      /* 17px */
-  --fs-lg: 1.25rem;        /* 20px */
-  --fs-xl: 1.5rem;         /* 24px */
-  --fs-2xl: 1.875rem;      /* 30px */
-  --fs-3xl: 2.25rem;       /* 36px */
-  --fs-4xl: 2.625rem;      /* 42px */
-
-  --lh-tight: 1.12;
-  --lh-snug: 1.3;
-  --lh-normal: 1.6;
-  --lh-relaxed: 1.75;
-
-  --tracking-tight: -0.022em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.08em;
-
-  /* --- Spacing scale (4px base) ---------------------------------------- */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 2.5rem;
-  --space-8: 3rem;
-  --space-9: 4rem;
-  --space-10: 5rem;
-  --space-11: 6rem;
-
-  /* --- Radii ------------------------------------------------------------ */
-  /* 15px is the anchor radius; nothing is a full pill any more. */
-  --radius-btn: 15px;             /* buttons, inputs, anything interactive     */
-  --radius-sm: 8px;
-  --radius-md: 15px;
-  --radius-lg: 18px;
-  --radius-xl: 22px;
-  --radius-pill: 999px;           /* retained for genuinely circular elements  */
-
-  /* Light neutral-black shadows - hairlines carry the structure, not elevation. */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 20px 44px rgba(0, 0, 0, 0.09), 0 4px 10px rgba(0, 0, 0, 0.04);
-  --shadow-brand: 0 8px 20px rgba(0, 0, 0, 0.16);
-
-  /* Restrained: transform/opacity only; section 16 disables it under reduced-motion. */
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);  /* soft decelerate for entrances */
-  --speed-fast: 120ms;
-  --speed: 200ms;
-  --speed-slow: 320ms;
-  --speed-reveal: 620ms;          /* scroll-in / load-in reveals               */
-  --lift: -3px;                   /* the one hover-lift distance, used by all  */
-
-  /* --- Layout ----------------------------------------------------------- */
-  --container-max: 1200px;
-  --container-narrow: 760px;
-  --gutter: var(--space-4);
-  --header-height: 68px;
-
-  /* --- Focus ring ------------------------------------------------------- */
-  --focus-ring: 3px solid var(--color-blue);
-  --focus-offset: 3px;
-}
 
 /* 02. BASE ELEMENTS & TYPOGRAPHY */
 
@@ -130,12 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: var(--fs-3xl);
   line-height: var(--lh-tight);
-  font-weight: 800;
+  letter-spacing: var(--tracking-display);
 }
 
 h2 {
   font-size: var(--fs-2xl);
   line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
 }
 
 h3 { font-size: var(--fs-xl); }
@@ -145,9 +39,9 @@ h5 { font-size: var(--fs-md); }
 h6 {
   font-size: var(--fs-eyebrow);
   font-weight: 700;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-blue);
+  color: var(--color-ink);
 }
 
 p {
@@ -175,7 +69,7 @@ code {
   border-radius: var(--radius-sm);
 }
 
-/* reset.css strips anchor styling, so inline links must restate colour and underline. */
+/* reset.css strips anchors, so inline links restate colour and underline. */
 .prose a,
 a.text-link,
 .hint a,
@@ -312,27 +206,16 @@ blockquote {
   margin-inline: 0;
 }
 
+/* Uppercase micro label. Tracking does the work; no rule, no plate. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-size: var(--fs-eyebrow);
   font-weight: 700;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-blue);
-}
-
-.eyebrow::before {
-  content: "";
-  width: 18px;
-  height: 2px;
-  background: var(--color-blue);
-  border-radius: var(--radius-pill);
-}
-
-.section-head:not(.section-head--left) .eyebrow::before {
-  display: none;
+  color: var(--color-muted);
 }
 
 /* Generic auto-fitting grid used by most card collections. */
@@ -405,29 +288,32 @@ blockquote {
 .icon--lg { width: 26px; height: 26px; }
 .icon--filled { fill: currentColor; stroke: none; }
 
-/* Round tinted plate that many icons sit on. */
+/* The icon stands on its own; the plate is a bare box so nothing competes with it. */
 .icon-plate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: var(--color-blue-tint);
-  color: var(--color-blue);
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  color: var(--color-ink);
   flex: none;
-  transition: background var(--speed) var(--ease), color var(--speed) var(--ease);
+  transition: color var(--speed) var(--ease);
 }
 
-.icon-plate--solid {
-  background: var(--color-blue);
-  color: var(--color-white);
+.icon-plate .icon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.25;
+}
+
+.icon-plate--solid .icon {
+  stroke-width: 1.9;
 }
 
 .icon-plate--sm {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-sm);
+  width: 24px;
+  height: 24px;
 }
 
 /* 05. BUTTONS & PILLS */
@@ -438,11 +324,13 @@ blockquote {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: 0.72rem 1.4rem;
+  padding: 0.95rem 1.75rem;
   border-radius: var(--radius-btn);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  line-height: 1;
   border: 1px solid transparent;
   cursor: pointer;
   text-align: center;
@@ -479,9 +367,7 @@ blockquote {
 }
 
 .btn-primary:hover {
-  background: var(--color-blue-hover);
-  box-shadow: var(--shadow-brand);
-  transform: translateY(var(--lift));
+  background: var(--color-ink-soft);
 }
 
 .btn-primary:active {
@@ -491,31 +377,30 @@ blockquote {
 }
 
 .btn-secondary {
-  background: var(--color-white);
-  color: var(--color-blue);
-  border-color: var(--color-blue-tint-strong);
-  box-shadow: var(--shadow-xs);
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
 }
 
 .btn-secondary:hover {
-  background: var(--color-blue-tint);
-  border-color: var(--color-blue);
-  transform: translateY(var(--lift));
-  box-shadow: var(--shadow-sm);
+  background: var(--color-ink);
+  color: var(--color-white);
 }
 
 .btn-secondary:active {
-  background: var(--color-blue-tint-strong);
+  background: var(--color-ink-soft);
 }
 
+/* Reads as a tracked underline, not a box - the quietest way out of a section. */
 .btn-ghost {
   background: transparent;
-  color: var(--color-blue);
-  padding-inline: var(--space-2);
+  color: var(--color-ink);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-line-strong);
 }
 
 .btn-ghost:hover {
-  color: var(--color-blue-active);
+  border-bottom-color: var(--color-ink);
   gap: var(--space-3);
 }
 
@@ -525,8 +410,7 @@ blockquote {
 }
 
 .btn-inverse:hover {
-  background: var(--color-blue-tint);
-  transform: translateY(var(--lift));
+  background: var(--color-wash-deep);
 }
 
 .btn-outline-inverse {
@@ -549,44 +433,40 @@ blockquote {
   font-size: var(--fs-base);
 }
 
-/* Small status / category pills */
+/* Small status / category marks */
 .tag {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: 0.25rem 0.7rem;
+  padding: 0.3rem 0.6rem;
   border-radius: var(--radius-sm);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  background: var(--color-blue-tint);
-  color: var(--color-blue-active);
-  border: 1px solid var(--color-blue-tint-strong);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-line-strong);
   white-space: nowrap;
 }
 
 .tag--solid {
-  background: var(--color-blue);
+  background: var(--color-ink);
   color: var(--color-white);
-  border-color: var(--color-blue);
+  border-color: var(--color-ink);
 }
 
 .tag--quiet {
-  background: var(--color-surface);
+  background: var(--color-wash);
   color: var(--color-muted);
-  border-color: var(--color-border);
+  border-color: transparent;
 }
 
 .tag--placeholder {
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--color-surface),
-    var(--color-surface) 6px,
-    var(--color-blue-tint) 6px,
-    var(--color-blue-tint) 12px
-  );
-  color: var(--color-muted);
+  color: var(--color-danger);
   border-style: dashed;
-  border-color: var(--color-muted);
+  border-color: var(--color-danger);
 }
 
 /* 06. HEADER, BRAND, PRIMARY NAVIGATION - the mobile menu is the CSS checkbox hack. */
@@ -744,47 +624,14 @@ blockquote {
 
 /* 07. HERO & THE CONCEPT -> PRODUCTION ARC */
 
-/* Landing hero: .hero__bg render under a .hero__veil rgba fade, copy on top; centred below 768px. */
+/* Landing hero: display headline over a photograph that fades into the page. */
 .hero {
   position: relative;
-  padding-block: var(--space-9) var(--space-9);
+  padding-block: var(--space-9) 0;
   overflow: hidden;
   isolation: isolate;
   background: var(--color-white);
-  text-align: center;
-}
-
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero__bg img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-  /* The render is grey-on-white, so multiply drops its white ground against the page. */
-  mix-blend-mode: multiply;
-  opacity: 0.22;
-  animation: hero-drift var(--speed-reveal) var(--ease-out) both;
-}
-
-.hero__veil {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.55) 0%,
-      rgba(255, 255, 255, 0.80) 55%,
-      var(--color-white) 100%
-    );
+  text-align: left;
 }
 
 .hero__inner {
@@ -793,42 +640,99 @@ blockquote {
 }
 
 .hero h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
   margin-bottom: var(--space-4);
+  max-width: 14ch;
+}
+
+/* The first line sits back so the hub name carries the weight, as in the reference. */
+.hero h1 .hero__line-1 {
+  display: block;
+  font-weight: 400;
+  color: var(--color-body);
   letter-spacing: var(--tracking-tight);
+}
+
+.hero h1 .hero__line-2 {
+  display: block;
+  font-weight: 700;
+  color: var(--color-ink);
 }
 
 .hero__lede {
   font-size: var(--fs-md);
   color: var(--color-body);
-  max-width: 52ch;
-  margin-inline: auto;
+  max-width: 46ch;
   margin-bottom: var(--space-6);
 }
 
 .hero__actions {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  align-items: stretch;
-  margin-bottom: var(--space-7);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-8);
 }
 
 .hero__eyebrow {
-  margin-bottom: var(--space-4);
-  justify-content: center;
+  margin-bottom: var(--space-5);
 }
 
-/* Dropped wherever the eyebrow is centred, matching a centred .section-head. */
-.hero__eyebrow::before {
-  display: none;
+/* Bounds the photograph to the copy block, so it never covers the facts row. */
+.hero__stage {
+  position: relative;
 }
 
-/* Hero facts: proof points in flow, left-aligned at every width so icon and copy stay square. */
+/* In flow below the copy on small screens, behind it from 768px. */
+.hero__media {
+  position: relative;
+  margin: 0;
+  z-index: 1;
+}
+
+.hero__media img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+/* Fades the photograph's lower edge into the page rather than cutting it off. */
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.85) 88%,
+    var(--color-white) 100%
+  );
+  pointer-events: none;
+}
+
+/* The located-at chip from the reference: black box, white type, bottom right. */
+.hero__credit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: var(--color-ink);
+  color: var(--color-white);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-wide);
+  padding: 0.45rem 0.75rem;
+  margin: 0;
+}
+
+/* Hero facts: proof points in flow, left-aligned so icon and copy stay square. */
 .hero__facts {
   display: grid;
-  gap: var(--space-4);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--color-border);
+  gap: var(--space-5);
+  padding-block: var(--space-8);
   list-style: none;
   text-align: left;
 }
@@ -858,57 +762,6 @@ blockquote {
   color: var(--color-muted);
   line-height: var(--lh-normal);
 }
-
-/* Legacy hero figure and annotation cards, still used by the inner pages. */
-.hero__stage {
-  position: relative;
-  margin-top: var(--space-4);
-}
-
-.hero__figure {
-  margin: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--color-blue-tint);
-  border: 1px solid var(--color-blue-tint-strong);
-  box-shadow: var(--shadow-lg);
-}
-
-.hero__figure img {
-  width: 100%;
-  height: auto;
-}
-
-.annotation {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-4);
-  text-align: left;
-  margin-top: var(--space-3);
-}
-
-.annotation__title {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--color-ink);
-  margin-bottom: var(--space-1);
-}
-
-.annotation__title .icon {
-  color: var(--color-blue);
-}
-
-.annotation p {
-  font-size: var(--fs-xs);
-  color: var(--color-muted);
-  line-height: var(--lh-normal);
-}
-
 /* --- Concept -> Production stage strip -------------------------------- */
 
 .arc {
@@ -928,9 +781,7 @@ blockquote {
 }
 
 .arc__step:hover {
-  border-color: var(--color-blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  border-color: var(--color-ink);
 }
 
 .arc__num {
@@ -975,9 +826,7 @@ blockquote {
 }
 
 .card:hover {
-  border-color: var(--color-blue-tint-strong);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  border-color: var(--color-ink);
 }
 
 /* Card headings are sized by role, not outline level - the contact sidebar uses h2. */
@@ -1015,11 +864,6 @@ blockquote {
   padding-top: var(--space-4);
 }
 
-/* A card whose whole surface is a link */
-.card--link:hover .card__title {
-  color: var(--color-blue);
-}
-
 /* Media card: image on top, body below */
 .card--media {
   padding: 0;
@@ -1041,10 +885,10 @@ blockquote {
   background: var(--color-blue-tint);
 }
 
-/* The lifted card in a row. */
+/* The emphasised card in a row: inverted rather than lifted. */
 .card--featured {
-  border-color: var(--color-blue);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--color-ink);
+  box-shadow: inset 0 0 0 1px var(--color-ink);
 }
 
 .card--brand {
@@ -1053,8 +897,7 @@ blockquote {
   color: rgba(255, 255, 255, 0.84);
 }
 
-.card--brand h3,
-.card--brand .card__title {
+.card--brand h3 {
   color: var(--color-white);
 }
 
@@ -1070,8 +913,50 @@ blockquote {
 /* Dashed treatment marks content that is deliberately a placeholder. */
 .card--placeholder {
   border-style: dashed;
-  border-color: var(--color-blue-tint-strong);
-  background: var(--color-surface);
+  border-color: var(--color-danger);
+  background: var(--color-white);
+}
+
+/* Marks a photograph the hub still owes, naming the file to drop in. */
+.placeholder-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  aspect-ratio: 16 / 10;
+  padding: var(--space-5);
+  text-align: center;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-wash),
+    var(--color-wash) 10px,
+    var(--color-white) 10px,
+    var(--color-white) 20px
+  );
+  border: 1px dashed var(--color-danger);
+  color: var(--color-muted);
+}
+
+.placeholder-media__label {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-danger);
+}
+
+.placeholder-media__file {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-body);
+  word-break: break-all;
+}
+
+.placeholder-media__note {
+  font-size: var(--fs-xs);
+  max-width: 34ch;
+  line-height: var(--lh-normal);
 }
 
 /* --- Feature project (ParaVision) ------------------------------------- */
@@ -1080,18 +965,14 @@ blockquote {
   display: grid;
   gap: var(--space-5);
   background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5);
-  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-line);
+  padding: var(--space-6);
 }
 
 .feature__media {
   margin: 0;
-  border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--color-blue-tint);
-  border: 1px solid var(--color-blue-tint-strong);
+  background: var(--color-wash);
 }
 
 .feature__media img {
@@ -1198,9 +1079,7 @@ blockquote {
 }
 
 .student-card:hover {
-  border-color: var(--color-blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  border-color: var(--color-ink);
 }
 
 .student-card__top {
@@ -1362,30 +1241,6 @@ blockquote {
   margin-top: var(--space-1);
 }
 
-/* Partner / affiliation strip — text marks only, no remote logo files. */
-.logo-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-4) var(--space-6);
-}
-
-.logo-strip li {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--color-muted);
-  transition: color var(--speed) var(--ease);
-}
-
-.logo-strip li:hover {
-  color: var(--color-blue);
-}
-
 /* 10. ACCORDION & TABS (CSS-only interactive components) */
 
 /* --- <details> accordion ---------------------------------------------- */
@@ -1465,29 +1320,31 @@ blockquote {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  padding: var(--space-1);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  margin-bottom: var(--space-5);
+  padding: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: var(--space-6);
 }
 
 .tabs__tab {
   flex: 1 1 auto;
   text-align: center;
-  padding: 0.55rem 1rem;
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-sm);
+  padding: 0.7rem 1rem;
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   font-weight: 600;
   color: var(--color-muted);
   white-space: nowrap;
   cursor: pointer;
-  transition: background var(--speed) var(--ease), color var(--speed) var(--ease);
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  transition: color var(--speed) var(--ease), border-color var(--speed) var(--ease);
 }
 
 .tabs__tab:hover {
-  color: var(--color-blue);
-  background: var(--color-blue-tint);
+  color: var(--color-ink);
+  border-bottom-color: var(--color-line-strong);
 }
 
 .tabs__panel {
@@ -1499,8 +1356,8 @@ blockquote {
 #tab-ai:checked ~ .tabs__list [for="tab-ai"],
 #tab-embedded:checked ~ .tabs__list [for="tab-embedded"],
 #tab-iot:checked ~ .tabs__list [for="tab-iot"] {
-  background: var(--color-blue);
-  color: var(--color-white);
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
 }
 
 #tab-all:checked ~ .tabs__panels #panel-all,
@@ -1539,8 +1396,8 @@ blockquote {
 }
 
 .gallery__item:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
+  outline: 1px solid var(--color-ink);
+  outline-offset: -1px;
 }
 
 .gallery__item img {
@@ -1947,7 +1804,7 @@ blockquote {
   display: inline-flex;
   gap: var(--space-2);
 
-  /* The email is one unbreakable token that burst its 120px column and widened the page. */
+  /* The email is one unbreakable token that widened the page. */
   overflow-wrap: anywhere;
 
   /* Aligns to the first line rather than the block centre once the text wraps. */
@@ -1997,10 +1854,9 @@ blockquote {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border);
+  width: 34px;
+  height: 34px;
+  border: 0;
   color: var(--color-muted);
   transition:
     background var(--speed) var(--ease),
@@ -2020,13 +1876,11 @@ blockquote {
 
 .text-center { text-align: center; }
 .text-muted { color: var(--color-muted); }
-.text-blue { color: var(--color-blue); }
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
 .mt-4 { margin-top: var(--space-4); }
 .mt-5 { margin-top: var(--space-5); }
 .mt-6 { margin-top: var(--space-6); }
-.full-width { width: 100%; }
 
 /* Page banner used at the top of every interior page. */
 /* Centred below 768px like the hero; reverts to left-aligned at 768px. */
@@ -2187,11 +2041,6 @@ blockquote {
 
 /* 16. MOTION - transform/opacity only; entrances animate FROM a displaced state. */
 
-@keyframes hero-drift {
-  from { opacity: 0; transform: translate(-50%, -46%) scale(1.04); }
-  to   { opacity: 0.22; transform: translate(-50%, -50%) scale(1); }
-}
-
 @keyframes rise-in {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
@@ -2220,29 +2069,26 @@ blockquote {
 
 /* Photography is desaturated here, not baked in - delete this to restore colour. */
 
-.card__media img,
+.card--media img,
 .gallery__item img,
-.feature__media img,
-.event__media img {
-  filter: grayscale(1) contrast(1.03);
+.feature__media img {
+  /* filter: grayscale(1) contrast(1.03); */
   transition:
     filter var(--speed-slow) var(--ease),
     transform var(--speed-slow) var(--ease);
 }
 
-.card:hover .card__media img,
+.card--media:hover img,
 .gallery__item:hover img,
-.feature:hover .feature__media img,
-.event:hover .event__media img {
-  filter: grayscale(0.35) contrast(1);
+.feature:hover .feature__media img {
+  /* filter: grayscale(0.35) contrast(1); */
   transform: scale(1.03);
 }
 
-/* The wrapper has to clip, or the scaled image overflows its rounded corner. */
-.card__media,
+/* The wrapper has to clip, or the scaled image overflows its own box. */
+.card--media,
 .gallery__item,
-.feature__media,
-.event__media {
+.feature__media {
   overflow: hidden;
 }
 
@@ -2311,7 +2157,7 @@ blockquote {
   opacity: 1;
 }
 
-/* No scroll observer without JS, so below-fold sections fade in on load, opacity only. */
+/* No scroll observer without JS, so sections fade in on load. */
 
 .section-head {
   animation: fade-in var(--speed-slow) var(--ease) both;
@@ -2336,11 +2182,6 @@ blockquote {
     transform: none;
   }
 
-  .hero__bg img {
-    opacity: 0.22;
-    transform: translate(-50%, -50%);
-  }
-
   /* Hover lifts and image zooms are movement too. */
   .btn:hover,
   .btn-primary:hover,
@@ -2352,40 +2193,10 @@ blockquote {
   }
 
   .btn:hover .icon,
-  .card:hover .card__media img,
+  .card--media:hover img,
   .gallery__item:hover img,
   .feature:hover .feature__media img {
     transform: none;
   }
 }
 
-/* Image credits: a licence obligation, kept quiet so it does not compete. */
-
-.credit-list {
-  columns: 1;
-  column-gap: var(--space-6);
-  list-style: none;
-  font-size: var(--fs-xs);
-  color: var(--color-muted);
-}
-
-.credit-list li {
-  break-inside: avoid;
-  padding-block: var(--space-2);
-  border-bottom: 1px solid var(--color-border);
-  line-height: var(--lh-normal);
-}
-
-.credit-list a {
-  color: var(--color-body);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-color: var(--color-blue-tint-strong);
-  transition: color var(--speed) var(--ease),
-              text-decoration-color var(--speed) var(--ease);
-}
-
-.credit-list a:hover {
-  color: var(--color-ink);
-  text-decoration-color: var(--color-ink);
-}

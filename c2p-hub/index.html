@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>C2P Tech Hub &mdash; Concept to Production | Computer Engineering, ABU Zaria</title>
+  <title>C2P Tech Hub ; Concept to Production | Computer Engineering, ABU Zaria</title>
   <meta name="description" content="C2P Tech Hub is an innovation, incubation, coding and research hub in the Department of Computer Engineering, Ahmadu Bello University, Zaria, where students take ideas from concept to production.">
   <meta name="author" content="C2P Tech Hub, Department of Computer Engineering, Ahmadu Bello University, Zaria">
   <meta name="theme-color" content="#111111">
-  <link rel="icon" href="assets/images/C2PLOGO-mark-mono.png" type="image/png">
+  <link rel="icon" href="assets/images/brand/c2p-mark-mono.png" type="image/png">
   <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
-  <!-- The one permitted script element: a declarative ld+json data island, not executable code. -->
+  <!-- Declarative ld+json data island, not executable code. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,7 +22,7 @@
     "alternateName": "Concept to Production Tech Hub",
     "description": "An innovation, incubation, coding and research hub in the Department of Computer Engineering, Ahmadu Bello University, Zaria, providing a learning environment where students and curious minds conceptualize ideas and bring them to life.",
     "url": "https://c2phub.com/",
-    "logo": "https://c2phub.com/assets/images/C2PLOGO.PNG",
+    "logo": "https://c2phub.com/assets/images/brand/c2p-logo-full.png",
     "foundingDate": "2025-10-17",
     "slogan": "Rooted in knowledge, Branching into Innovation",
     "email": "admin@c2phub.com",
@@ -61,12 +62,12 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ====================== SHARED HEADER / NAVIGATION ====================== -->
+  <!-- Shared header / navigation -->
   <header class="site-header">
     <div class="container header-inner">
 
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/images/C2PLOGO-mark-mono.png"
+        <img class="brand-mark" src="assets/images/brand/c2p-mark-mono.png"
              alt="C2P Tech Hub logo mark" width="320" height="169">
         <span class="brand-text">
           <span class="brand-name">C2P Tech Hub</span>
@@ -74,7 +75,7 @@
         </span>
       </a>
 
-      <!-- CSS-only component 1 of 4: checkbox-hack navigation, no JavaScript or inline handler. -->
+      <!-- CSS-only 1 of 4: checkbox-hack navigation. -->
       <input class="nav-toggle" type="checkbox" id="nav-toggle">
       <label class="nav-toggle-label" for="nav-toggle">
         <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -112,39 +113,47 @@
 
   <main id="main">
 
-    <!-- Records below are written out statically from /data/*.json, which stays the canonical model. -->
+    <!-- Written out statically from /data/*.json, the canonical model. -->
 
-    <!-- Hero: the 3D render is decorative (alt="", aria-hidden); the veil over it keeps the copy legible. -->
+    <!-- Hero: the photograph fades into the page; the copy holds the cleared left column. -->
     <section class="hero" aria-labelledby="hero-title">
 
-      <div class="hero__bg" aria-hidden="true">
-        <img src="assets/images/logo-3d.png" alt="" width="1430" height="858"
-             fetchpriority="high" decoding="async">
-        <span class="hero__veil"></span>
-      </div>
-
+      <div class="hero__stage">
       <div class="container hero__inner">
 
         <p class="eyebrow hero__eyebrow">Department of Computer Engineering &middot; ABU Zaria</p>
 
-        <h1 id="hero-title">Concept today.<br>Production tomorrow.</h1>
+        <h1 id="hero-title">
+          <span class="hero__line-1">Welcome to</span>
+          <span class="hero__line-2">C2P Tech Hub.</span>
+        </h1>
 
         <p class="hero__lede">
-          C2P Tech Hub is a learning environment where students and curious minds
-          take an idea from a first rough sketch to something that actually runs.
-          Innovation, incubation, coding and research, in one place.
+          We help students take an idea from a first rough sketch to something
+          that actually runs.
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn-primary btn--lg" href="join.html">
-            Join the Hub
+          <a class="btn btn-primary btn--lg" href="join.html">Start your journey</a>
+          <a class="btn btn-ghost" href="projects.html">
+            See student projects
             <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M5 12h14M13 6l6 6-6 6"/>
             </svg>
           </a>
-          <a class="btn btn-secondary btn--lg" href="projects.html">See student projects</a>
         </div>
 
+      </div>
+
+      <figure class="hero__media">
+        <img src="assets/images/photos/hub-mural-wall.jpg"
+             alt="The C2P Tech Hub mural: a row of filament bulbs labelled Vision, Connection, Goals, Growth, Teamwork, Research and Strategy above the hub wordmark"
+             width="1280" height="720" fetchpriority="high" decoding="async">
+        <figcaption class="hero__credit">C2P Tech Hub ; First Floor, Computer Engineering</figcaption>
+      </figure>
+      </div>
+
+      <div class="container">
         <ul class="hero__facts">
           <li class="hero__fact">
             <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -182,7 +191,7 @@
       </div>
     </section>
 
-    <!-- ========================= STATISTIC BAND ========================= -->
+    <!-- Statistic band -->
     <section class="section section--tight section--sunken" aria-labelledby="stats-title">
       <div class="container">
         <h2 id="stats-title" class="sr-only">The hub at a glance</h2>
@@ -208,7 +217,7 @@
       </div>
     </section>
 
-    <!-- ===================== CONCEPT TO PRODUCTION ARC ===================== -->
+    <!-- Concept to production arc -->
     <section class="section" aria-labelledby="arc-title">
       <div class="container">
 
@@ -227,7 +236,7 @@
             <h3>Concept</h3>
             <p>
               Arrive with a rough idea, or find one at a Thursday session. Nothing
-              is too small to start with &mdash; most projects here began as a
+              is too small to start with ; most projects here began as a
               complaint about something that did not work properly.
             </p>
           </li>
@@ -261,7 +270,7 @@
       </div>
     </section>
 
-    <!-- ====================== FLAGSHIP PROJECT ====================== -->
+    <!-- Flagship project -->
     <!-- Mirrors data/projects.json -> projects[id="proj-paravision"] -->
     <section class="section section--tinted" aria-labelledby="paravision-title">
       <div class="container">
@@ -269,9 +278,9 @@
         <article class="feature">
 
           <figure class="feature__media">
-            <img loading="lazy" decoding="async" src="assets/images/projects/project-paravision.jpg"
-                 alt="The ParaVision team demonstrating their diagnostic tool on a laptop beside a microscope, with a blood sample image classified on screen"
-                 width="1000" height="625">
+            <img loading="lazy" decoding="async" src="assets/images/photos/huawei-ict-team-medals.jpg"
+                 alt="The ParaVision team holding their medals and certificates after the Huawei ICT Competition global final"
+                 width="1280" height="854">
           </figure>
 
           <div class="feature__body">
@@ -330,7 +339,7 @@
       </div>
     </section>
 
-    <!-- ============================ PROGRAMS ============================ -->
+    <!-- Programs -->
     <!-- Mirrors data/programs.json -> programs[] (all seven records) -->
     <section class="section" aria-labelledby="programs-title">
       <div class="container">
@@ -459,7 +468,7 @@
       </div>
     </section>
 
-    <!-- ========================= UPCOMING EVENTS ========================= -->
+    <!-- Upcoming events -->
     <!-- Mirrors data/events.json -> events[] where status = "upcoming" -->
     <section class="section section--sunken" aria-labelledby="events-title">
       <div class="container">
@@ -582,14 +591,14 @@
       </div>
     </section>
 
-    <!-- ============================ CTA BAND ============================ -->
+    <!-- Cta band -->
     <section class="section" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-band">
           <h2 id="cta-title">Bring an idea. Leave with something that runs.</h2>
           <p>
             Membership is open to students at every level and from every
-            department. The Thursday session is the easiest place to start &mdash;
+            department. The Thursday session is the easiest place to start ;
             turn up, or send us your details first.
           </p>
           <p class="cluster">
@@ -602,7 +611,7 @@
 
   </main>
 
-  <!-- ============================ SHARED FOOTER ============================ -->
+  <!-- Shared footer -->
   <footer class="site-footer">
     <div class="container">
 
@@ -610,13 +619,13 @@
 
         <div class="footer-brand">
           <a href="index.html">
-            <img class="footer-logo" src="assets/images/C2PLOGO-mono.png"
-                 alt="C2P Tech Hub &mdash; Rooted in knowledge, Branching into Innovation"
+            <img class="footer-logo" src="assets/images/brand/c2p-logo-mono.png"
+                 alt="C2P Tech Hub ; Rooted in knowledge, Branching into Innovation"
                  width="900" height="405">
           </a>
           <p>
             An innovation, incubation, coding and research hub in the Department
-            of Computer Engineering, Ahmadu Bello University, Zaria &mdash; where
+            of Computer Engineering, Ahmadu Bello University, Zaria ; where
             ideas are taken from concept all the way to production.
           </p>
         </div>

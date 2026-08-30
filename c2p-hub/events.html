@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Events | C2P Tech Hub &mdash; Concept to Production</title>
+  <title>Events | C2P Tech Hub; Concept to Production</title>
   <meta name="description" content="Bootcamps, hackathons, research seminars and demo days at the C2P Tech Hub, Department of Computer Engineering, Ahmadu Bello University, Zaria.">
   <meta name="author" content="C2P Tech Hub, Department of Computer Engineering, Ahmadu Bello University, Zaria">
   <meta name="theme-color" content="#111111">
-  <link rel="icon" href="assets/images/C2PLOGO-mark-mono.png" type="image/png">
+  <link rel="icon" href="assets/images/brand/c2p-mark-mono.png" type="image/png">
   <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
-  <!-- The one permitted script element: a declarative ld+json data island, not executable code. -->
+  <!-- Declarative ld+json data island, not executable code. -->
   <script type="application/ld+json">
   [
     {
@@ -24,7 +25,6 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "The formal opening of the hub, hosted by the Department of Computer Engineering. Staff, students and invited guests saw the space, the first project benches and the programme of work planned for the session.",
-      "image": "https://c2phub.com/assets/images/events/event-hub-launch-2025.jpg",
       "url": "https://c2phub.com/events.html#evt-001",
       "location": {
         "@type": "Place",
@@ -53,7 +53,7 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "The national finals of the Huawei ICT Competition innovation track, where the ParaVision team presented their parasite detection tool to the judging panel and won the track.",
-      "image": "https://c2phub.com/assets/images/events/event-huawei-ict-finals-2026.jpg",
+      "image": "https://c2phub.com/assets/images/photos/huawei-ict-global-final.jpg",
       "url": "https://c2phub.com/events.html#evt-002",
       "location": {
         "@type": "Place",
@@ -81,7 +81,6 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "A three-week evening bootcamp taking members from bare-metal C to a working sensor node on the ESP32. Sessions are hands-on throughout and each participant defends a small working build in the final week.",
-      "image": "https://c2phub.com/assets/images/events/event-embedded-bootcamp-2026.jpg",
       "url": "https://c2phub.com/events.html#evt-003",
       "location": {
         "@type": "Place",
@@ -110,7 +109,6 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "A 48-hour build sprint against a problem brief published when the clock starts. Teams of three to five demonstrate live to a panel of departmental staff and visiting industry engineers.",
-      "image": "https://c2phub.com/assets/images/events/event-hackathon-2026.jpg",
       "url": "https://c2phub.com/events.html#evt-004",
       "location": {
         "@type": "Place",
@@ -139,7 +137,6 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "The computer vision research cluster presents its current work, using ParaVision as the worked example of how a diagnostic model moves from labelled dataset to something a clinician could use.",
-      "image": "https://c2phub.com/assets/images/events/event-research-seminar-2026.jpg",
       "url": "https://c2phub.com/events.html#evt-005",
       "location": {
         "@type": "Place",
@@ -168,7 +165,6 @@
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "description": "The closing event of the first incubation cohort, where all eight teams demonstrate what they built across the semester to staff, industry guests and other members.",
-      "image": "https://c2phub.com/assets/images/events/event-demo-day-2026.jpg",
       "url": "https://c2phub.com/events.html#evt-006",
       "location": {
         "@type": "Place",
@@ -195,12 +191,12 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ====================== SHARED HEADER / NAVIGATION ====================== -->
+  <!-- Shared header / navigation -->
   <header class="site-header">
     <div class="container header-inner">
 
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/images/C2PLOGO-mark-mono.png"
+        <img class="brand-mark" src="assets/images/brand/c2p-mark-mono.png"
              alt="C2P Tech Hub logo mark" width="320" height="169">
         <span class="brand-text">
           <span class="brand-name">C2P Tech Hub</span>
@@ -245,7 +241,7 @@
 
   <main id="main">
 
-    <!-- ============================ PAGE BANNER ============================ -->
+    <!-- Page banner -->
     <section class="page-banner" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -262,11 +258,11 @@
       </div>
     </section>
 
-    <!-- ============================== UPCOMING ============================== -->
+    <!-- Upcoming -->
     <section class="section" aria-labelledby="upcoming-title">
       <div class="container">
 
-        <!-- Records mirror data/events.json field for field; edit the JSON first, then this markup. -->
+        <!-- Mirrors data/events.json; edit the JSON first. -->
 
         <div class="section-head section-head--left">
           <p class="eyebrow">Upcoming</p>
@@ -277,7 +273,7 @@
           </p>
         </div>
 
-        <p class="data-note">
+        <!-- <p class="data-note">
           <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <ellipse cx="12" cy="6" rx="8" ry="3"/>
             <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/>
@@ -289,7 +285,7 @@
             the current date without JavaScript, it is stored in the record and the
             upcoming/past split below is maintained by hand.
           </span>
-        </p>
+        </p> -->
 
         <div class="stack mt-6">
 
@@ -457,7 +453,7 @@
                     <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4 2 2 0 0 0 0-4z"/>
                     <path d="M14 6v2M14 11v2M14 16v2"/>
                   </svg>
-                  Open to all members &mdash; no registration required
+                  Open to all members; no registration required
                 </span>
               </p>
               <p class="mt-4">
@@ -516,7 +512,7 @@
                     <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4 2 2 0 0 0 0-4z"/>
                     <path d="M14 6v2M14 11v2M14 16v2"/>
                   </svg>
-                  Open to all &mdash; guests welcome
+                  Open to all; guests welcome
                 </span>
               </p>
               <p class="mt-4">
@@ -535,7 +531,7 @@
       </div>
     </section>
 
-    <!-- ================================ PAST ================================ -->
+    <!-- Past -->
     <section class="section section--sunken" aria-labelledby="past-title">
       <div class="container">
 
@@ -561,7 +557,7 @@
                 <span class="tag tag--solid">Competition</span>
                 <span class="tag tag--quiet">Past</span>
               </p>
-              <h3>Huawei ICT Competition &mdash; Innovation Track Finals</h3>
+              <h3>Huawei ICT Competition; Innovation Track Finals</h3>
               <p>
                 The national finals of the Huawei ICT Competition innovation track, where
                 the ParaVision team presented their parasite detection tool to the judging
@@ -595,7 +591,7 @@
                     <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4 2 2 0 0 0 0-4z"/>
                     <path d="M14 6v2M14 11v2M14 16v2"/>
                   </svg>
-                  Closed &mdash; this event has taken place
+                  Closed; this event has taken place
                 </span>
               </p>
             </div>
@@ -646,7 +642,7 @@
                     <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4 2 2 0 0 0 0-4z"/>
                     <path d="M14 6v2M14 11v2M14 16v2"/>
                   </svg>
-                  Closed &mdash; this event has taken place
+                  Closed; this event has taken place
                 </span>
               </p>
               <p class="mt-4">
@@ -665,7 +661,7 @@
       </div>
     </section>
 
-    <!-- ============================= CTA BAND ============================= -->
+    <!-- Cta band -->
     <section class="section" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-band">
@@ -684,7 +680,7 @@
 
   </main>
 
-  <!-- ============================ SHARED FOOTER ============================ -->
+  <!-- Shared footer -->
   <footer class="site-footer">
     <div class="container">
 
@@ -692,13 +688,13 @@
 
         <div class="footer-brand">
           <a href="index.html">
-            <img class="footer-logo" src="assets/images/C2PLOGO-mono.png"
-                 alt="C2P Tech Hub &mdash; Rooted in knowledge, Branching into Innovation"
+            <img class="footer-logo" src="assets/images/brand/c2p-logo-mono.png"
+                 alt="C2P Tech Hub; Rooted in knowledge, Branching into Innovation"
                  width="900" height="405">
           </a>
           <p>
             An innovation, incubation, coding and research hub in the Department
-            of Computer Engineering, Ahmadu Bello University, Zaria &mdash; where
+            of Computer Engineering, Ahmadu Bello University, Zaria; where
             ideas are taken from concept all the way to production.
           </p>
         </div>

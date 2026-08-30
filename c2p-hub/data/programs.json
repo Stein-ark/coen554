@@ -1,16 +1,15 @@
 {
-  "$comment": "C2P Tech Hub — canonical data model for the Innovation Programs entity. JSON has no comment syntax, so documentation is carried in $comment and fields keys. Because JavaScript is prohibited by the project constraints, this file is NOT fetched at runtime: programs.html mirrors these records as static HTML. This file is the single source of truth from which that markup is written and against which it should be checked.",
+  "$comment": "Canonical model for Programs. Not fetched at runtime (no JavaScript); programs.html mirrors these records as static HTML. All seven are the hub's real offerings.",
   "entity": "program",
   "schema_version": "1.0.0",
   "last_updated": "2026-08-13",
   "record_count": 7,
-
   "fields": {
-    "id": "string (required, unique) — stable slug-style key, prefix 'prog-'. Used as the HTML element id and the :target / accordion anchor.",
+    "id": "string (required, unique) — stable slug-style key, prefix 'prog-'.",
     "name": "string (required) — display name of the program.",
-    "icon": "string (required) — key naming the hand-written inline SVG icon used for this program. Not a file path: the icon markup lives inline in the HTML because icon libraries would require an external request.",
+    "icon": "string (required) — key naming the hand-written inline SVG icon used for this program.",
     "tagline": "string (required) — one-line positioning statement, max ~60 chars, used as the card subtitle.",
-    "description": "string (required) — two to three sentences of concrete detail. Rendered as the card body and the accordion panel.",
+    "description": "string (required) — two to three sentences of concrete detail.",
     "format": "string (required) — how the program is delivered.",
     "cadence": "string (required) — how often it runs.",
     "duration": "string (required) — typical length of one instance.",
@@ -19,7 +18,6 @@
     "outcomes": "array of string (required, 2-4 items) — what a participant leaves with.",
     "is_placeholder": "boolean (required) — false for all seven programs; these are the hub's actual published offerings."
   },
-
   "programs": [
     {
       "id": "prog-bootcamps",

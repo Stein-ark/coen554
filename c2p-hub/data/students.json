@@ -1,21 +1,19 @@
 {
-  "$comment": "C2P Tech Hub — canonical data model for the Student Directory entity. Every record in this file is a generated placeholder (is_placeholder: true) and MUST be replaced with real member data before the directory is published. JavaScript is prohibited by the project constraints, so this file is NOT fetched at runtime; directory.html mirrors these records as static HTML. This file is nevertheless the editing surface: change a record here, then update the corresponding row in directory.html.",
+  "$comment": "Canonical model for the Student Directory. Not fetched at runtime (no JavaScript); directory.html mirrors these records as static HTML. Every record is a placeholder and must be replaced before publication.",
   "entity": "student",
   "schema_version": "1.0.0",
   "last_updated": "2026-08-13",
   "record_count": 12,
-
   "fields": {
     "id": "string (required, unique) — stable key, prefix 'stu-', zero-padded to three digits so records sort correctly as strings.",
     "name": "string (required) — the member's full name as they wish it displayed.",
-    "initials": "string (required, 2 chars) — precomputed monogram for the avatar. Stored rather than derived because deriving it in the browser would require JavaScript, which the project constraints forbid.",
-    "level": "string (required) — year of study in the Nigerian university convention. One of: 100L | 200L | 300L | 400L | 500L.",
-    "department": "string (required) — the member's home department. The hub sits in Computer Engineering but is open to students from any department, so this is not a constant.",
-    "focus_area": "string (required) — the technical area the member works in. Used for mentor matching and for grouping the directory.",
-    "project": "string (required) — title of the hub project the member is currently attached to. Corresponds to a title in projects.json.",
+    "initials": "string (required, 2 chars) — precomputed monogram for the avatar.",
+    "level": "string (required) — year of study in the Nigerian university convention.",
+    "department": "string (required) — the member's home department.",
+    "focus_area": "string (required) — the technical area the member works in.",
+    "project": "string (required) — title of the hub project the member is currently attached to.",
     "is_placeholder": "boolean (required) — true for every record currently in this file."
   },
-
   "students": [
     {
       "id": "stu-001",
